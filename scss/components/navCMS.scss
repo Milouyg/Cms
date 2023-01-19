@@ -1,0 +1,30 @@
+.navCms{
+    display: flex;
+    height: 15rem;
+    width: 100vw;
+
+    &__img{
+        width: 30%;
+        height: auto;
+    }
+
+    &__container{
+        width: 30%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__title{
+        width: 40%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__h2{
+        font-size: 3rem;
+    }
+}
