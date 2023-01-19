@@ -14,31 +14,9 @@ if(isset($_POST["submit"])){
 
 function validationCMS($formValue){
     if(isset($_POST[$formValue]) && !empty($_POST[$formValue])){
-        if($formValue == "title"){
-            $filter = trim($_POST[$formValue]);
-            $filter = htmlspecialchars($filter);
-            $filter = stripslashes($filter);
-        }
-        if($formValue == "taal"){
-            $filter = trim($_POST[$formValue]);
-            $filter = htmlspecialchars($filter);
-            $filter = stripslashes($filter);
-        }
-        if($formValue == "categorie"){
-            $filter = trim($_POST[$formValue]);
-            $filter = htmlspecialchars($filter);
-            $filter = stripslashes($filter);
-        }
-        if($formValue == "datum"){
-            $filter = trim($_POST[$formValue]);
-            $filter = htmlspecialchars($filter);
-            $filter = stripslashes($filter);
-        }
-        if($formValue == "beschrijving"){
-            $filter = trim($_POST[$formValue]);
-            $filter = htmlspecialchars($filter);
-            $filter = stripslashes($filter);
-        }
+        $filter = trim($_POST[$formValue]);
+        $filter = htmlspecialchars($filter);
+        $filter = stripslashes($filter);
         return $filter;
     }
     else{
@@ -79,7 +57,7 @@ function validationCMS($formValue){
             <textarea name="beschrijving" id="beschrijving" maxlength="300" cols="30" rows="10" class="cms__beschrijving" placeholder="Beschrijving"></textarea>
             <div id="counter" class="cms__counter"></div>
             <section class="cms__container--1">
-                <input type="submit" value="submit" class="cms__submit">
+                <input type="submit" value="submit" class="cms__submit" name="submit">
             </section>
         </form>
     </section>

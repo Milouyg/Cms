@@ -60,9 +60,9 @@ class database{
 
     function uploadPHP($title, $taal, $categorie, $datum, $beschrijving){
         try{
-            $sql = "INSERT INTO php(Title, Taal, Categorie, Datum, Beschrijving) VALUES('Title', 'Taal', 'Categorie', 'Datum', 'Beschrijving')";
+            $sql = "INSERT INTO php(Title, Taal, Categorie, Datum, Beschrijving) VALUES(:Title, :Taal, :Categorie, :Datum, :Beschrijving)";
             $statement = $this->instance->prepare($sql);
-    
+
             $statement->execute([
             "Title" => $title,
             "Taal" => $taal,

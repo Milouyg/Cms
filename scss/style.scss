@@ -1,14 +1,14 @@
-@use "reset.scss";
-@use "aanmelden/aanmelden.scss";
-@use "login/login.scss";
-@use "abstracts/mixins";
-@use "abstracts/variables";
-@use "components/aanbevolenHome.scss";
-@use "components/aanbevolenCms.scss";
-@use "components/artikelen.scss";
-@use "components/banner.scss";
-@use "components/footer.scss";
-@use "components/nav.scss";
-@use "components/recente.scss";
-@use "components/cms.scss";
+@use "./abstracts/base";
+@use "./abstracts/reset";
+@use "./components/nav.scss";
+@use "./components/banner.scss";
+@use "./components/artikelen.scss";
+@use "./components/aanbevolen.scss";
+@use "./components/recente.scss";
+@use "./components/footer.scss";
+@use "./components/navCMS.scss";
+@use "./components/cms.scss";
+@use "./components/dashboard.scss";
+@use "./components/aanmelden.scss";
+@use "./components/login.scss";
 
