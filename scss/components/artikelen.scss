@@ -1,0 +1,10 @@
+.artikelen{
+    min-height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 100%;
+
+    &__container{
+        display: flex;
+    }
+}
