@@ -27,16 +27,16 @@ class database{
     }
 
     // We create here a register
-    function register($name, $email, $password, $roles){
+    function register($name, $email, $password, $role){
         try{
-            $sql = "INSERT INTO users(name, email, password, roles) VALUES(:name, :email, :password, :roles)";
+            $sql = "INSERT INTO users(name, email, password, role) VALUES(:name, :email, :password, :role)";
             $statement = $this->instance->prepare($sql);
     
             $statement->execute([
             "name" => $name,
             "email" => $email,
             "password" => $password,
-            "roles" => $roles
+            "role" => $role
             ]);
         }
         catch(PDOException $error){

@@ -7,7 +7,7 @@ require_once "../classes/db.php";
         $validationPassword = validation("wachtwoord");
         $connectionDB = new database("localhost", "cms", "root", "");
         $connectionDB->connect();
-        $connectionDB->register($validationName, $validationEmail, $validationPassword, "user");
+        $connectionDB->register($validationName, $validationEmail, $validationPassword, 0);
     };
 
     function validation($formValue){
@@ -44,32 +44,32 @@ require_once "../classes/db.php";
 </head>
 <body class="login__body">
     <form class="form" method="post">
-        <header class="form__header">
-            <h2 class="form__h2">aanmelden</h2>
+        <header class="formAanmelden__header">
+            <h2 class="formAanmelden__h2">aanmelden</h2>
         </header>
-        <section class="form__section">
-            <div class="form__div">
-                <figure class="form__figure">
+        <section class="formAanmelden__section">
+            <div class="formAanmelden__div">
+                <figure class="formAanmelden__figure">
                     <i class="fa-solid fa-user icon"></i>
                 </figure>
-                <input type="text" name="naam" class="form__input form__input--naam" placeholder="Naam">
+                <input type="text" name="naam" class="formAanmelden__input formAanmelden__input--naam" placeholder="Naam">
             </div>
-            <div class="form__div">
-                <figure class="form__figure">
+            <div class="formAanmelden__div">
+                <figure class="formAanmelden__figure">
                     <i class="fa-solid fa-envelope icon"></i>
                 </figure>
-                <input type="text" name="email" class="form__input form__input--email" placeholder="Voorbeeld@email.com"></div>
-            <div class="form__div">
-                <figure class="form__figure">
+                <input type="text" name="email" class="formAanmelden__input formAanmelden__input--email" placeholder="Voorbeeld@email.com"></div>
+            <div class="formAanmelden__div">
+                <figure class="formAanmelden__figure">
                     <i class="fa-solid fa-lock icon"></i>
                 </figure>
-                <input type="password" name="wachtwoord" class="form__input form__input--password" placeholder="Wachtwoord" title="Moet minimaal 4 letters bevatten">
+                <input type="password" name="wachtwoord" class="formAanmelden__input formAanmelden__input--password" placeholder="Wachtwoord" title="Moet minimaal 4 letters bevatten">
             </div>
-            <input type="submit" value="submit" name="submit" class="form__input form__input--submit">
+            <input type="submit" value="submit" name="submit" class="formAanmelden__input formAanmelden__input--submit">
         </section>
-        <footer class="form__footer">
-            <p class="form__p">Al een account?</p>
-            <a href="login.php" class="form__a form__a">Log nu in</a>
+        <footer class="formAanmelden__footer">
+            <p class="formAanmelden__p">Al een account?</p>
+            <a href="login.php" class="formAanmelden__a">Log nu in</a>
         </footer>
     </form>
 </body>

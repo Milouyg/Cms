@@ -136,7 +136,7 @@ body {
   font-weight: 300;
 }
 
-.form {
+.formAanmelden {
   position: relative;
   display: flex;
   justify-content: center;
@@ -148,7 +148,7 @@ body {
   box-shadow: 0rem 0rem 4rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.form__header {
+.formAanmelden__header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -159,8 +159,8 @@ body {
   background: #FFD495;
 }
 
-.form__section {
-  padding-top: 4rem;
+.formAanmelden__section {
+  padding-top: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -168,10 +168,10 @@ body {
   background: transparent;
   width: 100%;
   height: 67%;
-  gap: 6.5rem;
+  gap: 7rem;
 }
 
-.form__div {
+.formAanmelden__div {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,7 +179,7 @@ body {
   height: 0%;
 }
 
-.form__figure {
+.formAanmelden__figure {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -194,41 +194,40 @@ body {
   color: #FFD495;
 }
 
-.form__input {
+.formAanmelden__input {
   width: 60%;
   height: 4rem;
   border: none;
   background: white;
-  font-size: 1.5rem;
+  font-size: 2rem;
   border-bottom: 0.2rem solid #FFD495;
 }
 
-.form__input--submit {
-  margin-top: 2rem;
+.formAanmelden__input--submit {
   border: none;
   border-radius: 1rem;
   background: #FFD495;
 }
 
-.form__input--submit:hover {
+.formAanmelden__input--submit:hover {
   cursor: pointer;
 }
 
-.form__a {
+.formAanmelden__a {
   bottom: 37%;
   text-decoration: none;
   color: grey;
 }
 
-.form__a--password {
+.formAanmelden__a--password {
   position: absolute;
 }
 
-.form__a:hover {
+.formAanmelden__a:hover {
   color: black;
 }
 
-.form__footer {
+.formAanmelden__footer {
   width: 100%;
   height: 18%;
   display: flex;
