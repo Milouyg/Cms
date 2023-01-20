@@ -17,36 +17,60 @@ body {
   font-size: 2rem;
   width: 100vw;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .nav {
+  height: 10rem;
+  width: 80vw;
+  margin: auto;
+  z-index: 1;
   display: flex;
-  height: 15rem;
-  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+  opacity: 0.8;
+  border-bottom: 0.3rem solid black;
+  animation-name: line;
+  animation-duration: 3s;
+  animation-fill-mode: backwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+@keyframes line {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 85%;
+  }
 }
 .nav__img {
-  width: 30%;
-  height: auto;
+  height: 7rem;
+  width: auto;
 }
-.nav__container {
-  width: 30%;
-  height: 100%;
+.nav__list {
+  list-style: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 70%;
 }
-.nav__title {
-  width: 40%;
+.nav__listItem {
+  width: 15rem;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
-.nav__h2 {
-  font-size: 3rem;
+.nav__links {
+  color: black;
+  font-size: 2.5rem;
+  text-decoration: none;
+}
+.nav__links:hover {
+  transition: 0.2s;
+  background: -webkit-linear-gradient(#b20600, #ff5f00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .aanbevolen {
@@ -94,7 +118,7 @@ body {
   padding-right: 3rem;
 }
 .aanbevolen__label {
-  padding: 1rem 0 1rem 0;
+  padding: 1rem 1rem 1rem 1rem;
   min-width: 8rem;
   height: 3rem;
   border: 0.1rem solid black;
@@ -180,6 +204,7 @@ body {
 }
 
 .form__input--submit {
+  margin-top: 2rem;
   border: none;
   border-radius: 1rem;
   background: #FFD495;
@@ -213,6 +238,14 @@ body {
   border-bottom-right-radius: 1.5rem;
   border-bottom-left-radius: 1.5rem;
   gap: 1rem;
+}
+
+.login__body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .form {
@@ -347,7 +380,6 @@ body {
 .banner__img {
   width: 100%;
   height: 100%;
-  background: url("../img/banner.jpg");
   background-size: cover;
 }
 
@@ -539,7 +571,8 @@ body {
   font-size: 3rem;
 }
 .recente__label {
-  width: 8rem;
+  padding: 1rem 1rem 1rem 1rem;
+  min-width: 8rem;
   height: 3rem;
   border: 0.1rem solid black;
   border-radius: 3rem;

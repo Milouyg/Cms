@@ -37,14 +37,14 @@ function validationCMS($formValue){
     <title>CMS</title>
 </head>
 <body>
-    <nav class="nav">
-        <section class="nav__container">
-            <img src="img/logo.png" alt="" class="nav__img">
+    <nav class="navCms">
+        <section class="navCms__container">
+            <img src="img/logo.png" alt="" class="navCms__img">
         </section>
-        <section class="nav__title">
-            <h2 class="nav__h2">CMS</h2>
+        <section class="navCms__title">
+            <h2 class="navCms__h2">CMS</h2>
         </section>
-        <section class="nav__container"></section>
+        <section class="navCms__container"></section>
     </nav>
     <section class="cms__section">
         <form method="POST" action="" class="cms">
@@ -61,36 +61,44 @@ function validationCMS($formValue){
             </section>
         </form>
     </section>
-    <article class="aanbevolen">
-        <section class="aanbevolen__container">
-            <h2 class="aanbevolen__h2">Dashboard</h2>
+
+    <?php 
+    if($_SESSION['role'] == 1 /* 1 = admin, 2 = ..., 3 = ...  */) {
+        // code die uitgevoerd / zichtbaar moet zijn wanneer je rol Admin hebt. 
+        ?>
+            <article class="dashboard">
+        <section class="dashboard__container">
+            <h2 class="dashboard__h2">Dashboard</h2>
         </section>
-        <ul class="aanbevolen__list">
-            <li class="aanbevolen__listItem">
-                <article class="aanbevolen__header">
-                    <h3 class="aanbevolen__h3">Title</h3>
-                    <label for="" class="aanbevolen__label">Taal</label>
-                    <label for="" class="aanbevolen__label">Categorie</label>
+        <ul class="dashboard__list">
+            <li class="dashboard__listItem">
+                <article class="dashboard__header">
+                    <h3 class="dashboard__h3">Title</h3>
+                    <label for="" class="dashboard__label">Taal</label>
+                    <label for="" class="dashboard__label">Categorie</label>
                 </article>
-                <p class="aanbevolen__datum">Datum</p>
-                <p class="aanbevolen__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                <p class="dashboard__datum">Datum</p>
+                <p class="dashboard__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Reprehenderit enim repudiandae perferendis fugiat, obcaecati eaque voluptatibus sed,
                     distinctio soluta laudantium fugit voluptatum ratione. Odit modi exercitationem qui illum
                     sunt quas!</p>
             </li>
-            <li class="aanbevolen__listItem">
-                <article class="aanbevolen__header">
-                    <h3 class="aanbevolen__h3">Title</h3>
-                    <label for="" class="aanbevolen__label">Taal</label>
-                    <label for="" class="aanbevolen__label">Categorie</label>
+            <li class="dashboard__listItem">
+                <article class="dashboard__header">
+                    <h3 class="dashboard__h3">Title</h3>
+                    <label for="" class="dashboard__label">Taal</label>
+                    <label for="" class="dashboard__label">Categorie</label>
                 </article>
-                <p class="aanbevolen__datum">Datum</p>
-                <p class="aanbevolen__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                <p class="dashboard__datum">Datum</p>
+                <p class="dashboard__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Reprehenderit enim repudiandae perferendis fugiat, obcaecati eaque voluptatibus sed,
                     distinctio soluta laudantium fugit voluptatum ratione. Odit modi exercitationem qui illum
                     sunt quas!</p>
             </li>
         </ul>
     </article>
+        <?php
+    }?>
+
 </body>
 </html>

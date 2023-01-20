@@ -42,7 +42,7 @@ require_once "../classes/db.php";
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://kit.fontawesome.com/b1a8b29774.js" crossorigin="anonymous"></script> 
 </head>
-<body>
+<body class="login__body">
     <form class="form" method="post">
         <header class="form__header">
             <h2 class="form__h2">aanmelden</h2>

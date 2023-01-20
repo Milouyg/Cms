@@ -30,11 +30,11 @@
                 <a href="" class="nav__links">CSS</a>
             </li>
         </ul>
-        <a href="index-form.html" class="nav__links">Login</a>
+        <a href="./components/login.php" class="nav__links">Login</a>
         
     </nav>
     <header class="banner">
-        <img class="banner__img" src="" alt="">
+        <img class="banner__img" src="img/banner.jpg" alt="">
     </header>
     <section class="artikelen">
         <div class="artikelen__container">

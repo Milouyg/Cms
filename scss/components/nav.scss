@@ -1,30 +1,56 @@
 .nav{
+    height: 10rem;
+    width: 80vw;
+    margin: auto;
+    z-index: 1;
     display: flex;
-    height: 15rem;
-    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    opacity: 0.8;
+    border-bottom: 0.3rem solid black;
+    animation-name: line;
+    animation-duration: 3s;
+    animation-fill-mode: backwards;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    @keyframes line {
+        from {width: 0%}
+        
+        to {width: 85%};
+    }
 
     &__img{
-        width: 30%;
-        height: auto;
-    }
+        height: 7rem;
+        width: auto;
+        }
 
-    &__container{
-        width: 30%;
-        height: 100%;
+    &__list{
+        list-style: none;
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 70%;
     }
 
-    &__title{
-        width: 40%;
+    &__listItem{
+        width: 15rem;
         height: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;
     }
-
-    &__h2{
-        font-size: 3rem;
+   
+    &__links{
+        color: black;
+        font-size: 2.5rem;
+        text-decoration: none;
+    
+            &:hover{
+                transition: 0.2s;
+                background: -webkit-linear-gradient(#b20600, #ff5f00);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent
+            }
     }
 }

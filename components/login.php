@@ -8,7 +8,7 @@
         $userData = $connectionDB->login($_POST["email"], $_POST["password"]);
         if($userData != FALSE){
             $_SESSION["name"] = $userData["name"];
-            $_SESSION["roles"] = $userData["roles"];
+            $_SESSION["role"] = $userData["role"];
             $_SESSION["logged"] = TRUE;
             header('Location: cms.php');
         }
@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://kit.fontawesome.com/b1a8b29774.js" crossorigin="anonymous"></script> 
 </head>
-<body>
+<body class="login__body">
     <form action="" class="form" method="post">
         <header class="form__header">
             <h2 class="form__h2">Inlog form</h2>
