@@ -35,7 +35,7 @@ class database{
             $statement->execute([
             "name" => $name,
             "email" => $email,
-            "password" => $password,
+            "password" => password_hash($password, PASSWORD_DEFAULT),
             "role" => $role
             ]);
         }
@@ -47,9 +47,15 @@ class database{
     // We create here a login
     function login($email, $password){
         try{
-            $sql = "SELECT * FROM users WHERE `email`='$email' AND `password`='$password'"; // Alles ophalen van de user tabel, waar de email colum == aan de email variabele die we meegeven
+            $sql = "SELECT * FROM users WHERE `email`='$email'"; // Alles ophalen van de user tabel, waar de email colum == aan de email variabele die we meegeven
             foreach ($this->instance->query($sql) as $row){
-                return $row;
+                if(password_verify($password, $row["password"])){
+                    return $row;
+                }
+                else{
+                    return FALSE;
+                }
+                
             }
             return FALSE;
         }

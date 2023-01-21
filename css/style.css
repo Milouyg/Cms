@@ -271,7 +271,7 @@ body {
 }
 
 .form__section {
-  padding-top: 7rem;
+  padding-top: 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -317,12 +317,12 @@ body {
 }
 
 .form__input--password {
-  font-size: 1.5rem;
+  font-size: 2rem;
   border-bottom: 0.2rem solid #FFD495;
 }
 
 .form__input--submit {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   border: none;
   border-radius: 1rem;
   background: #FFD495;
@@ -333,7 +333,7 @@ body {
 }
 
 .form__a {
-  bottom: 37%;
+  bottom: 35%;
   text-decoration: none;
   color: grey;
 }
@@ -356,6 +356,14 @@ body {
   border-bottom-right-radius: 1.5rem;
   border-bottom-left-radius: 1.5rem;
   gap: 1rem;
+}
+
+.form__p {
+  padding-bottom: 3rem;
+}
+
+.form__a--newLid {
+  padding-bottom: 3rem;
 }
 
 .artikelen {

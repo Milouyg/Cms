@@ -48,7 +48,7 @@
         </section>
         <footer class="form__footer">
             <p class="form__p">Nog geen lid?</p>
-            <a href="aanmelden.php" class="form__a form__a">Meld je nu aan</a>
+            <a href="aanmelden.php" class="form__a form__a--newLid">Meld je nu aan</a>
         </footer>
     </form>
 
