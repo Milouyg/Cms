@@ -20,8 +20,10 @@ We have made an information page what linked to the sign-up/login page.
 If you are going to sign-up your:
 - name
 - email 
-- password 
-will appear in the database.
+- password <br><br>
+will appear in the database. Your password will also be hashed.
+If you have forgotten your password, you can go to the form "Wachtwoord vergeten"
+and change your password there. This will also be updated in the database.
 When you log in as admin, you will be sent to the cms.
 When you log in as user, you will be sent to the information page.
 Apart from that we have finished the roles and rights.
