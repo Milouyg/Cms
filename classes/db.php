@@ -28,7 +28,7 @@ class database{
 
     // We create here a register
     function register($name, $email, $password, $role){
-        try{
+        try{ 
             $sql = "INSERT INTO users(name, email, password, role) VALUES(:name, :email, :password, :role)";
             $statement = $this->instance->prepare($sql);
     
@@ -44,11 +44,33 @@ class database{
         }
     }
 
+    // We create here a updatePassword
+    function updatePassword($email, $password){
+        try{
+            // First password reference to the database column password, second password reference to line 55
+            $sql = "UPDATE users SET password=:password WHERE email=:email";
+            $statement = $this->instance->prepare($sql);
+            
+            $statement->execute([
+            "email" => $email,
+            "password" => password_hash($password, PASSWORD_DEFAULT)
+            ]);
+            if($statement->rowCount() > 0){
+                return TRUE;
+            }
+        }
+        catch(PDOException $error){
+            return "Error!: " . $error->getMessage() . "<br/>";
+        }
+    }
+
     // We create here a login
     function login($email, $password){
         try{
-            $sql = "SELECT * FROM users WHERE `email`='$email'"; // Alles ophalen van de user tabel, waar de email colum == aan de email variabele die we meegeven
+            // Get everything from the 'user' table. The email column == to the email variable we pass along
+            $sql = "SELECT * FROM users WHERE `email`='$email'"; 
             foreach ($this->instance->query($sql) as $row){
+                // This is where we hash passwords
                 if(password_verify($password, $row["password"])){
                     return $row;
                 }

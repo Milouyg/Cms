@@ -34,7 +34,7 @@
         <section class="form__section">
             <div class="form__div">
                 <figure class="form__figure">
-                <i class="fa-solid fa-envelope icon"></i>
+                    <i class="fa-solid fa-envelope icon"></i>
                 </figure>
                 <input type="text" name="email" class="form__input form__input--email" placeholder="Email"></div>
             <div class="form__div">
@@ -43,7 +43,7 @@
                 </figure>
                 <input type="password" name="password" class="form__input form__input--password" placeholder="Wachtwoord">
             </div>
-            <a href="" class="form__a form__a--password">Wachtwoord vergeten?</a>
+            <a href="wwVergeten.php" class="form__a form__a--password">Wachtwoord vergeten?</a>
             <input type="submit" value="submit" name="submit" class="form__input form__input--submit">
         </section>
         <footer class="form__footer">

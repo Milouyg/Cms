@@ -677,4 +677,124 @@ body {
   font-size: 3rem;
 }
 
+.formForgotPsw {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50rem;
+  height: 45rem;
+  border-radius: 1.5rem;
+  box-shadow: 0rem 0rem 4rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.formForgotPsw__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 15%;
+  border-top-right-radius: 1.5rem;
+  border-top-left-radius: 1.5rem;
+  background: #FFD495;
+}
+
+.formForgotPsw__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: transparent;
+  width: 100%;
+  height: 67%;
+  gap: 6.5rem;
+  padding-top: 6rem;
+}
+
+.formForgotPsw__div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 0%;
+}
+
+.formForgotPsw__figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  width: 4rem;
+  height: 4rem;
+  border-bottom: 0.2rem solid #FFD495;
+}
+
+.icon {
+  color: #FFD495;
+}
+
+.formForgotPsw__input {
+  width: 60%;
+  height: 4rem;
+  border: none;
+  background: white;
+  font-size: 2rem;
+}
+
+.formForgotPsw__input--email {
+  border-bottom: 0.2rem solid #FFD495;
+}
+
+.formForgotPsw__input--password {
+  font-size: 2rem;
+  border-bottom: 0.2rem solid #FFD495;
+}
+
+.formForgotPsw__input--submit {
+  border: none;
+  border-radius: 1rem;
+  background: #FFD495;
+}
+
+.formForgotPsw__input--submit:hover {
+  cursor: pointer;
+}
+
+.formForgotPsw__a {
+  bottom: 35%;
+  text-decoration: none;
+  color: grey;
+}
+
+.formForgotPsw__a--password {
+  position: absolute;
+}
+
+.formForgotPsw__a:hover {
+  color: black;
+}
+
+.formForgotPsw__footer {
+  width: 100%;
+  height: 18%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border-bottom-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  gap: 1rem;
+}
+
+.formForgotPsw__a--login {
+  padding-right: 3rem;
+  padding-bottom: 2rem;
+}
+
+.formForgotPsw__a--aanmelden {
+  padding-left: 3rem;
+  padding-bottom: 2rem;
+}
+
 /*# sourceMappingURL=style.css.map */

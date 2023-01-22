@@ -1,4 +1,4 @@
-.formAanmelden{
+.formForgotPsw{
     position: relative;
     display: flex;
     justify-content: center;
@@ -10,7 +10,7 @@
     box-shadow: 0rem 0rem 4rem 1rem rgba(0,0,0, .2);
 }
 
-.formAanmelden__header{
+.formForgotPsw__header{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,8 +21,7 @@
     background: #FFD495;
 }
 
-.formAanmelden__section{
-    padding-top: 5rem;
+.formForgotPsw__section{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,10 +29,11 @@
     background: transparent;
     width: 100%;
     height: 67%;
-    gap: 7rem;
+    gap: 6.5rem;
+    padding-top: 6rem;
 }
 
-.formAanmelden__div{
+.formForgotPsw__div{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,7 +41,7 @@
     height: 0%;
 }
 
-.formAanmelden__figure{
+.formForgotPsw__figure{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,46 +51,52 @@
     border-bottom: .2rem solid #FFD495;
 }
 
-.icon,
-.email{
+.icon{
     color: #FFD495;
 }
 
-.formAanmelden__input{
+.formForgotPsw__input{
     width: 60%;
     height: 4rem;
     border: none;
     background: white;
     font-size: 2rem;
-    border-bottom: .2rem solid #FFD495;
-
 }
 
-.formAanmelden__input--submit{
+.formForgotPsw__input--email{
+    border-bottom: .2rem solid #FFD495;
+}
+
+.formForgotPsw__input--password{
+    font-size: 2rem;
+    border-bottom: .2rem solid #FFD495;
+}
+
+.formForgotPsw__input--submit{
     border: none;
     border-radius: 1rem;
     background: #FFD495;
 }
 
-.formAanmelden__input--submit:hover{
+.formForgotPsw__input--submit:hover{
     cursor: pointer;
 }
 
-.formAanmelden__a{
-    bottom: 37%;
+.formForgotPsw__a{
+    bottom: 35%;
     text-decoration: none;
     color: grey;
 }
 
-.formAanmelden__a--password{
+.formForgotPsw__a--password{
     position: absolute;
 }
 
-.formAanmelden__a:hover{
+.formForgotPsw__a:hover{
     color: black;
 }
 
-.formAanmelden__footer{
+.formForgotPsw__footer{
     width: 100%;
     height: 18%;
     display: flex;
@@ -100,4 +106,15 @@
     border-bottom-right-radius: 1.5rem;
     border-bottom-left-radius: 1.5rem;
     gap: 1rem;
+}
+
+.formForgotPsw__a--login{
+    padding-right: 3rem;
+    padding-bottom: 2rem;
+}
+
+.formForgotPsw__a--aanmelden{
+    padding-left: 3rem;
+    padding-bottom: 2rem;
+
 }
