@@ -1,6 +1,7 @@
 <?php
 require_once "../classes/db.php";
 
+    // When the submit button is pressed, the "if statement" is executed
     if(isset($_POST["submit"])){
         $validationName = validation("naam");
         $validationEmail = validation("email");

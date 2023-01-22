@@ -1,17 +1,17 @@
 <?php
 class database{
+    public $instance; // 1 database instance
     public $serverName; // localhost
     public $dbName;   // cms
     public $userName; // root
     public $password; // ""
-    public $instance; // 1 database instantie
-
+    
     // With 'this' you address the global variable
     function __construct($serverName, $dbName, $userName, $password){
         $this->serverName = $serverName;
-        $this->dbName = $dbName;
-        $this->userName = $userName;
-        $this->password = $password;
+        $this->dbName     = $dbName;
+        $this->userName   = $userName;
+        $this->password   = $password;
     }
 
     // We create here a function to connect with the database
@@ -47,7 +47,7 @@ class database{
     // We create here a updatePassword
     function updatePassword($email, $password){
         try{
-            // First password reference to the database column password, second password reference to line 55
+            // First password reference to the database column password, second password reference to line 55. Same goes for password
             $sql = "UPDATE users SET password=:password WHERE email=:email";
             $statement = $this->instance->prepare($sql);
             
@@ -55,6 +55,7 @@ class database{
             "email" => $email,
             "password" => password_hash($password, PASSWORD_DEFAULT)
             ]);
+            // When it is greater than 0, we know the password is changed in the database
             if($statement->rowCount() > 0){
                 return TRUE;
             }
@@ -70,14 +71,13 @@ class database{
             // Get everything from the 'user' table. The email column == to the email variable we pass along
             $sql = "SELECT * FROM users WHERE `email`='$email'"; 
             foreach ($this->instance->query($sql) as $row){
-                // This is where we hash passwords
-                if(password_verify($password, $row["password"])){
+                if(password_verify($password, $row["password"])){  
+                    // We return to row to use it in sessions (login.php)
                     return $row;
                 }
                 else{
                     return FALSE;
                 }
-                
             }
             return FALSE;
         }
@@ -105,7 +105,5 @@ class database{
     }
 
 }
-
-
 
 ?>

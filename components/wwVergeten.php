@@ -1,6 +1,7 @@
 <?php
 require_once "../classes/db.php";
 
+    // Note: This is not safe, because now can everyone change your password if they know your email
     if(isset($_POST["submit"])){
         $connectionDB = new database("localhost", "cms", "root", "");
         $connectionDB->connect();
