@@ -11,6 +11,7 @@
             $_SESSION["role"] = $userData["role"];
             $_SESSION["logged"] = TRUE;
             header('Location: cms.php');
+            exit;
         }
     }
 
