@@ -396,7 +396,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 60rem;
-  height: 40rem;
+  height: 50rem;
   gap: 2rem;
   padding: 2rem;
   box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.7);
@@ -454,6 +454,9 @@ body {
   padding: 1rem;
   font-size: 1.8rem;
   border: 0.2rem solid #FF5F00;
+}
+.cms__counter {
+  font-size: 1.5rem;
 }
 .cms__submit {
   width: 10rem;
