@@ -24,6 +24,39 @@ function validationCMS($formValue){
     }
 };
 
+if(isset($_POST['submit'])) {
+
+    $file = $_FILES['file'];
+
+    $fileNaam = $file['naam'];
+    $fileType = $file['type'];
+    $fileTempName = $file['tmp_name'];
+    $fileError = $file['error'];
+    $fileGrootte = $file['grootte'];
+
+    $toegestaan = array("jpg", "jpeg", "png");
+    $fileExt = explode(".", $fileNaam);
+    $fileExt = strtolower(end($fileExt));
+    if(in_array($fileExt, $toegestaan)) {
+}
+
+if($fileError === 0) {
+
+}
+
+if($fileGrootte < 1000000) {
+    
+} else {
+    echo "Error: bestand te groot";
+}
+
+$nieuwefilenaam = uniqid("", true).".".$fileExt;
+
+$fileBestemming = "assets/".$nieuwefilenaam;
+move_uploaded_file($fileTempName, $fileBestemming);
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +89,7 @@ function validationCMS($formValue){
             <input type="date" class="cms__date" placeholder="Datum" id="datum" name="datum">
             <textarea name="beschrijving" id="beschrijving" maxlength="300" cols="30" rows="10" class="cms__beschrijving" placeholder="Beschrijving"></textarea>
             <div id="counter" class="cms__counter"></div>
+            <input class="cms__file" type="file" name="file">
             <section class="cms__container--1">
                 <input type="submit" value="submit" class="cms__submit" name="submit">
             </section>
