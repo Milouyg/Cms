@@ -3,7 +3,7 @@
 
     session_start();
     if(isset($_POST["submit"])){
-        $connectionDB = new database("localhost", "cms", "root", "");
+        $connectionDB = new database("localhost", "cms", "root", "root");
         $connectionDB->connect();
         $userData = $connectionDB->login($_POST["email"], $_POST["password"]);
         if($userData != FALSE){

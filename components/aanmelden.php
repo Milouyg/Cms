@@ -6,7 +6,7 @@ require_once "../classes/db.php";
         $validationName = validation("naam");
         $validationEmail = validation("email");
         $validationPassword = validation("wachtwoord");
-        $connectionDB = new database("localhost", "cms", "root", "");
+        $connectionDB = new database("localhost", "cms", "root", "root");
         $connectionDB->connect();
         $connectionDB->register($validationName, $validationEmail, $validationPassword, 0);
     };

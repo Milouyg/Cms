@@ -7,7 +7,7 @@ if(isset($_POST["submit"])){
     $validationCatergorie = validationCMS("categorie");
     $validationDatum = validationCMS("datum");
     $validationBeschrijving = validationCMS("beschrijving");
-    $connectionDB = new database("localhost", "cms", "root", "");
+    $connectionDB = new database("localhost", "cms", "root", "root");
     $connectionDB->connect();
     $connectionDB->uploadPHP($validationTitle, $validationTaal, $validationCatergorie, $validationDatum, $validationBeschrijving);
 };
