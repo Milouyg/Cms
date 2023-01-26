@@ -26,7 +26,7 @@ function validationCMS($formValue){
 
 if(isset($_POST['submit'])) {
 
-    $file = $_FILES['file'];
+    $file = ['file'];
 
     $fileNaam = $file['naam'];
     $fileType = $file['type'];
@@ -89,9 +89,19 @@ move_uploaded_file($fileTempName, $fileBestemming);
             <input type="date" class="cms__date" placeholder="Datum" id="datum" name="datum">
             <textarea name="beschrijving" id="beschrijving" maxlength="300" cols="30" rows="10" class="cms__beschrijving" placeholder="Beschrijving"></textarea>
             <div id="counter" class="cms__counter"></div>
-            <input class="cms__file" type="file" name="file">
             <section class="cms__container--1">
                 <input type="submit" value="submit" class="cms__submit" name="submit">
+            </section>
+        </form>
+        <form method="POST" action="" class="cms">
+            <section class="cms__header">
+                <h2 class="cms__h2">Image upload</h2>
+            </section>
+            <section class="cms__container">
+                <input type="file" class="cms__file" id="file" name="file">
+            </section>
+            <section class="cms__container--1">
+                <input type="submit" value="upload" class="cms__submit" name="upload">
             </section>
         </form>
     </section>

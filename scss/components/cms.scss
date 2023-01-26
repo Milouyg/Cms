@@ -15,6 +15,7 @@
         height: 50rem;
         display: flex;
         justify-content: center;
+        gap: 5rem;
     }
 
     &__container{
@@ -81,6 +82,12 @@
         padding: 1rem;
         border: 0.2rem solid #FF5F00;
         background: none;
+    }
+
+    &__file{
+        font-size: 2rem;
+        border: #FF5F00 solid 0.2rem;
+        padding: 1rem;
     }
 
 }
