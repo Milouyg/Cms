@@ -24,38 +24,23 @@ function validationCMS($formValue){
     }
 };
 
-if(isset($_POST['submit'])) {
 
-    $file = ['file'];
+$destination = 'assets/' . basename($_FILES['image']['name']);
+$file = $_FILES['image']['tmp_name'];
+$err = $_FILES['image']['error'];
 
-    $fileNaam = $file['naam'];
-    $fileType = $file['type'];
-    $fileTempName = $file['tmp_name'];
-    $fileError = $file['error'];
-    $fileGrootte = $file['grootte'];
+$allowed = array("jpg", "jpeg", "png");
 
-    $toegestaan = array("jpg", "jpeg", "png");
-    $fileExt = explode(".", $fileNaam);
-    $fileExt = strtolower(end($fileExt));
-    if(in_array($fileExt, $toegestaan)) {
-}
+$fileExt = explode(".", $fileName);
+$fileExt = strtolower(end($fileExt));
 
-if($fileError === 0) {
-
-}
-
-if($fileGrootte < 1000000) {
+if(in_array($fileExt, $allowed)) 
+    echo "bestand toegestaan"
     
-} else {
-    echo "Error: bestand te groot";
-}
 
-$nieuwefilenaam = uniqid("", true).".".$fileExt;
+if ($err == 0 && move_uploaded_file($file, $destination))
+    echo "Bestand succesvol geupload en verplaatst naar {$destination}";
 
-$fileBestemming = "assets/".$nieuwefilenaam;
-move_uploaded_file($fileTempName, $fileBestemming);
-
-}
 
 ?>
 
@@ -93,16 +78,10 @@ move_uploaded_file($fileTempName, $fileBestemming);
                 <input type="submit" value="submit" class="cms__submit" name="submit">
             </section>
         </form>
-        <form method="POST" action="" class="cms">
-            <section class="cms__header">
-                <h2 class="cms__h2">Image upload</h2>
-            </section>
-            <section class="cms__container">
-                <input type="file" class="cms__file" id="file" name="file">
-            </section>
-            <section class="cms__container--1">
-                <input type="submit" value="upload" class="cms__submit" name="upload">
-            </section>
+        <form action="cms.php" class="cms" method="post" enctype="multipart/form-data">
+            <h2>Upload and move Image</h2>
+            <input class="cms__submit" type="file" name="image">
+            <input class="cms__submit" type="submit" value="Upload">
         </form>
     </section>
 
