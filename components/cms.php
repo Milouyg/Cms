@@ -28,18 +28,23 @@ function validationCMS($formValue){
 $destination = 'assets/' . basename($_FILES['image']['name']);
 $file = $_FILES['image']['tmp_name'];
 $err = $_FILES['image']['error'];
+$size = filesize('assets/' . basename($_FILES['image']['name'])) / 1000000;
 
-$allowed = array("jpg", "jpeg", "png");
+function fileExists($destination) {
+return file_exists($destination);
+}
 
-$fileExt = explode(".", $fileName);
-$fileExt = strtolower(end($fileExt));
-
-if(in_array($fileExt, $allowed)) 
-    echo "bestand toegestaan"
-    
-
+if (!fileExists($destination)) {
 if ($err == 0 && move_uploaded_file($file, $destination))
-    echo "Bestand succesvol geupload en verplaatst naar {$destination}";
+echo "Bestand succesvol geupload en verplaatst naar {$destination} <br>";
+echo "grootte bestand:  " . $size . "MB";
+} 
+else if($size > 3) {
+    echo "Error: dit bestand is te groot";
+}
+else {
+    echo "Error: dit bestand bestaat al.";
+}
 
 
 ?>
