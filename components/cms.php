@@ -24,24 +24,6 @@ function validationCMS($formValue){
     }
 };
 
-
-$destination = 'assets/' . basename($_FILES['image']['name']);
-$file = $_FILES['image']['tmp_name'];
-$err = $_FILES['image']['error'];
-
-$allowed = array("jpg", "jpeg", "png");
-
-$fileExt = explode(".", $fileName);
-$fileExt = strtolower(end($fileExt));
-
-if(in_array($fileExt, $allowed)) 
-    echo "bestand toegestaan"
-    
-
-if ($err == 0 && move_uploaded_file($file, $destination))
-    echo "Bestand succesvol geupload en verplaatst naar {$destination}";
-
-
 ?>
 
 <!DOCTYPE html>
@@ -86,8 +68,6 @@ if ($err == 0 && move_uploaded_file($file, $destination))
     </section>
 
     <?php 
-    if($_SESSION['role'] == 1 /* 1 = admin, 2 = ..., 3 = ...  */) {
-        // code die uitgevoerd / zichtbaar moet zijn wanneer je rol Admin hebt. 
         ?>
             <article class="dashboard">
         <section class="dashboard__container">
@@ -120,8 +100,7 @@ if ($err == 0 && move_uploaded_file($file, $destination))
             </li>
         </ul>
     </article>
-        <?php
-    }?>
+    
 
 </body>
 </html>

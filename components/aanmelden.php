@@ -8,7 +8,8 @@ require_once "../classes/db.php";
         $validationPassword = validation("wachtwoord");
         $connectionDB = new database("localhost", "cms", "root", "root");
         $connectionDB->connect();
-        $connectionDB->register($validationName, $validationEmail, $validationPassword, 0);
+        $register = new Register($connectionDB->instance);
+        $register->register($validationName, $validationEmail, $validationPassword, 0);
     };
 
     function validation($formValue){

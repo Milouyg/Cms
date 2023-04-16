@@ -2,10 +2,11 @@
     require_once "../classes/db.php";
 
     session_start();
+    $connectionDB = new database("localhost", "cms", "root", "root");
     if(isset($_POST["submit"])){
-        $connectionDB = new database("localhost", "cms", "root", "root");
         $connectionDB->connect();
-        $userData = $connectionDB->login($_POST["email"], $_POST["password"]);
+        $login = new Login($connectionDB->instance);
+        $userData = $login->login($_POST["email"], $_POST["password"]);
         if($userData != FALSE){
             $_SESSION["name"] = $userData["name"];
             $_SESSION["role"] = $userData["role"];
@@ -32,6 +33,13 @@
         <header class="form__header">
             <h2 class="form__h2">Inlog form</h2>
         </header>
+        <ul>
+        <?php 
+        foreach ($connectionDB->errors as $error){
+            echo "<li> $error </li>";
+        }
+        ?>
+        </ul>
         <section class="form__section">
             <div class="form__div">
                 <figure class="form__figure">
