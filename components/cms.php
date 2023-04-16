@@ -24,6 +24,32 @@ function validationCMS($formValue){
     }
 };
 
+<<<<<<< HEAD
+=======
+
+$destination = 'assets/' . basename($_FILES['image']['name']);
+$file = $_FILES['image']['tmp_name'];
+$err = $_FILES['image']['error'];
+$size = filesize('assets/' . basename($_FILES['image']['name'])) / 1000000;
+
+function fileExists($destination) {
+return file_exists($destination);
+}
+
+if (!fileExists($destination)) {
+if ($err == 0 && move_uploaded_file($file, $destination))
+echo "Bestand succesvol geupload en verplaatst naar {$destination} <br>";
+echo "grootte bestand:  " . $size . "MB";
+} 
+else if($size > 3) {
+    echo "Error: dit bestand is te groot";
+}
+else {
+    echo "Error: dit bestand bestaat al.";
+}
+
+
+>>>>>>> 7c07144cd2906a158768d35877502c531ce15db0
 ?>
 
 <!DOCTYPE html>
