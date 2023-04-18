@@ -28,6 +28,16 @@ class database{
             die();
         }
     }
+}
+
+class CMS{
+    public $instance;
+    public $errors;
+
+    function __construct($instance){
+        $this->instance = $instance;
+        $this->errors = array();
+    }
 
     function uploadPHP($title, $taal, $categorie, $datum, $beschrijving){
         try{

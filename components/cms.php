@@ -9,7 +9,8 @@ if(isset($_POST["submit"])){
     $validationBeschrijving = validationCMS("beschrijving");
     $connectionDB = new database("localhost", "cms", "root", "root");
     $connectionDB->connect();
-    $connectionDB->uploadPHP($validationTitle, $validationTaal, $validationCatergorie, $validationDatum, $validationBeschrijving);
+    $cms = new CMS($connectionDB->instance);
+    $cms->uploadPHP($validationTitle, $validationTaal, $validationCatergorie, $validationDatum, $validationBeschrijving);
 };
 
 function validationCMS($formValue){
@@ -24,32 +25,7 @@ function validationCMS($formValue){
     }
 };
 
-<<<<<<< HEAD
-=======
 
-$destination = 'assets/' . basename($_FILES['image']['name']);
-$file = $_FILES['image']['tmp_name'];
-$err = $_FILES['image']['error'];
-$size = filesize('assets/' . basename($_FILES['image']['name'])) / 1000000;
-
-function fileExists($destination) {
-return file_exists($destination);
-}
-
-if (!fileExists($destination)) {
-if ($err == 0 && move_uploaded_file($file, $destination))
-echo "Bestand succesvol geupload en verplaatst naar {$destination} <br>";
-echo "grootte bestand:  " . $size . "MB";
-} 
-else if($size > 3) {
-    echo "Error: dit bestand is te groot";
-}
-else {
-    echo "Error: dit bestand bestaat al.";
-}
-
-
->>>>>>> 7c07144cd2906a158768d35877502c531ce15db0
 ?>
 
 <!DOCTYPE html>
@@ -85,48 +61,6 @@ else {
             <section class="cms__container--1">
                 <input type="submit" value="submit" class="cms__submit" name="submit">
             </section>
-        </form>
-        <form action="cms.php" class="cms" method="post" enctype="multipart/form-data">
-            <h2>Upload and move Image</h2>
-            <input class="cms__submit" type="file" name="image">
-            <input class="cms__submit" type="submit" value="Upload">
-        </form>
-    </section>
-
-    <?php 
-        ?>
-            <article class="dashboard">
-        <section class="dashboard__container">
-            <h2 class="dashboard__h2">Dashboard</h2>
-        </section>
-        <ul class="dashboard__list">
-            <li class="dashboard__listItem">
-                <article class="dashboard__header">
-                    <h3 class="dashboard__h3">Title</h3>
-                    <label for="" class="dashboard__label">Taal</label>
-                    <label for="" class="dashboard__label">Categorie</label>
-                </article>
-                <p class="dashboard__datum">Datum</p>
-                <p class="dashboard__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Reprehenderit enim repudiandae perferendis fugiat, obcaecati eaque voluptatibus sed,
-                    distinctio soluta laudantium fugit voluptatum ratione. Odit modi exercitationem qui illum
-                    sunt quas!</p>
-            </li>
-            <li class="dashboard__listItem">
-                <article class="dashboard__header">
-                    <h3 class="dashboard__h3">Title</h3>
-                    <label for="" class="dashboard__label">Taal</label>
-                    <label for="" class="dashboard__label">Categorie</label>
-                </article>
-                <p class="dashboard__datum">Datum</p>
-                <p class="dashboard__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Reprehenderit enim repudiandae perferendis fugiat, obcaecati eaque voluptatibus sed,
-                    distinctio soluta laudantium fugit voluptatum ratione. Odit modi exercitationem qui illum
-                    sunt quas!</p>
-            </li>
-        </ul>
-    </article>
-    
-
+    </form>
 </body>
 </html>
